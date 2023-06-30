@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Navigation</mat-toolbar>
+    <mat-toolbar>N</mat-toolbar>
     <mat-nav-list>
       <a *ngFor="let page of this.pages" mat-list-item [routerLink]="'/'+ page.pageTitle">
          {{ page.pageTitle }} </a>
@@ -21,6 +21,6 @@
       </button>
       <span>webby</span>
     </mat-toolbar>
-    texcttdflskgjnsdflkgndfs
+    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
