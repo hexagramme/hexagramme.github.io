@@ -4,7 +4,7 @@ import { DashComponent } from './dash/dash.component';
 import { NavComponent } from './nav/nav.component';
 const routes: Routes = [
   {path: 'dashboard', component: DashComponent},
-  {path: 'test', component: NavComponent}
+  {path: 'landing', component: NavComponent}
 ];
 
 @NgModule({
