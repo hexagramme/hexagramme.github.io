@@ -7,6 +7,6 @@ import { DashComponent } from './dash/dash.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webby';
+  title = 'Neat Angular-powered Landing Page'; 
 }
 
