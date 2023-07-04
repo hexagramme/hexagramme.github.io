@@ -12,17 +12,19 @@ import { Page } from './page';
 })
 export class NavComponent {
   //Variable declaration 
-  protected landing:Page = {
-    pageTitle: "landing",
-    pageDescription: "a home page for this lovely website"
+  protected home:Page = {
+    pageTitle: "home",
+    pageDescription: "a home page for this lovely website",
+    pageRoute: ""
   }
 
   protected dashboard:Page = {
     pageTitle: "dashboard",
-    pageDescription: "a dashboard showcasing some fun stuff and things"
+    pageDescription: "a dashboard showcasing some fun stuff and things",
+    pageRoute: "dashboard"
   }
 
-  protected pages:Page[] = [this.landing, this.dashboard];
+  protected pages:Page[] = [this.home, this.dashboard];
   
   private breakpointObserver = inject(BreakpointObserver);
 
