@@ -5,7 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Navigation</mat-toolbar>
     <mat-nav-list>
-      <a *ngFor="let page of this.pages" title=page.pageDescription mat-list-item [routerLink]="'/'+ page.pageRoute">
+      <a *ngFor="let page of this.pages" title= "{{page.pageDescription}}" mat-list-item [routerLink]="'/'+ page.pageRoute" >
          {{ page.pageTitle }} </a>
     </mat-nav-list>
   </mat-sidenav>

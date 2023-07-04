@@ -4,8 +4,8 @@ import { DashComponent } from './dash/dash.component';
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
 const routes: Routes = [
-  {path: 'dashboard', component: DashComponent},
-  {path: '', component: AppComponent}
+  {path: 'dashboard', component: DashComponent}
+  // {path: '', component: AppComponent}
 ];
 
 @NgModule({
