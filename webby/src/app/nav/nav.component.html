@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>N</mat-toolbar>
+    <mat-toolbar>Navigation</mat-toolbar>
     <mat-nav-list>
       <a *ngFor="let page of this.pages" mat-list-item [routerLink]="'/'+ page.pageTitle">
          {{ page.pageTitle }} </a>
@@ -19,7 +19,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Neat Angular-powered Landing Page</span>
+      <span>Angular Schematics & Material</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
