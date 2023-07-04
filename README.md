@@ -1,2 +1,2 @@
 # hexagramme.github.io
-Test repository to play with GitHub pages.
+Pseudo-dynamic GitHub Pages [website](hexagramme.github.io) powered by Angular Material & Schematics, Node.js, and angular-cli-ghpages. Routing is currently not working ╯︿╰
