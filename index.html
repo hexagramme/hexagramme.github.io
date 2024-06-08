@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .navbar .icon,
+        .navbar .nav-item {
+            cursor: pointer;
+        }
+
+        .navbar .icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .nav-item {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        /* Main Content Area Styling */
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LightWidget WIDGET -->
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+    <!-- END OF LightWidget WIDGET -->
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="icon" onclick="loadTemplate('Home_Template')">
+            <img src="./tinyLogo.png" alt="Home Icon">
+        </div>
+        <div class="nav-item" onclick="loadTemplate('Home_Template')">Home</div>
+        <div class="nav-item" onclick="loadTemplate('About_Us_Template')">About Us</div>
+        <div class="nav-item" onclick="loadTemplate('Vendors_Template')">Vendors</div>
+    </div>
+
+<!-- Main Content Area -->
+
+    <div id="main-content" class="content">
+        <!-- Content will be loaded here dynamically -->
+    </div>
+
+    <script>
+        // Function to load templates dynamically
+        function loadTemplate(templateId) {
+            const templates = {
+                "Home_Template": `
+                    <h1>Home</h1>
+                    <p>Welcome to our home page!</p>
+                `,
+                "About_Us_Template": `
+                    <h1>About Us</h1>
+                    <p>Learn more about us on this page.</p>
+                `,
+                "Vendors_Template": `
+                    <h1>Vendors</h1>
+                    <p>Discover our vendors here.</p>
+                `
+            };
+
+            // Load the selected template into the main content area
+            document.getElementById('main-content').innerHTML = templates[templateId];
+        }
+
+        // Load the Home template by default
+        loadTemplate('Home_Template');
+    </script>
+
+</body>
+</html>
