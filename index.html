@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation Bar</title>
+    <title>Hardy's Appliance & Furniture</title>
     <style>
         /* Basic Reset */
         * {
@@ -11,22 +11,56 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        .body {
+            background-color: #fefcf0;
+        }
+
+        .header {
+            background-color: #fefcf0;
+            width: 30%;
+            height: 30%; /* Adjust height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh; /* Full height for demonstration */
+        }
+
+        .container img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .header-item {
+            align-items: center;
+        }
 
         /* Navigation Bar Styling */
         .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #333;
-            color: white;
+            background-color: #03684a;
+            color: #fefcf0;
             padding: 10px 20px;
             width: 100%;
         }
 
         .navbar a {
-            color: white;
+            color: #fefcf0;
             text-decoration: none;
-            padding: 8px 15px;
+            padding: 8px 12px;
             display: block;
             text-align: center;
         }
@@ -37,8 +71,8 @@
         }
 
         .navbar .icon img {
-            width: 30px;
-            height: 30px;
+            width: 60px;
+            height: 60px;
         }
 
         /* Responsive Layout */
@@ -51,61 +85,132 @@
             .navbar .nav-item {
                 width: 100%;
                 text-align: left;
+                font-size: medium;
             }
         }
 
+        .template-item h1, h2, h3, h4 {
+            color: #022118;
+            padding-left: 15px;
+            padding-bottom: 5px;
+        }
+
+        .template-item p {
+            padding-left: 15px;
+            padding-bottom: 5px;
+        }
+        .template-item ul {
+            padding-left: 30px;
+            padding-top: 3px;
+        }
+        .template-item li {
+            padding-bottom: 3px;
+        }
         /* Main Content Area Styling */
         .content {
             padding: 20px;
         }
     </style>
 </head>
-<body>
+<body class="body">
 
-    <!-- LightWidget WIDGET -->
-    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe><!-- END OF LightWidget WIDGET -->
-    <!-- LightWidget WIDGET -->
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div class="icon" onclick="loadTemplate('Home_Template')">
-            <img src="./tinyLogo.png" alt="Home Icon">
-        </div>
-        <div class="nav-item" onclick="loadTemplate('Home_Template')">Home</div>
-        <div class="nav-item" onclick="loadTemplate('About_Us_Template')">About Us</div>
-        <div class="nav-item" onclick="loadTemplate('Vendors_Template')">Vendors</div>
-    </div>
-
-<!-- Main Content Area -->
-
+    <!-- Main Content Area -->
     <div id="main-content" class="content">
-        <!-- Content will be loaded here dynamically -->
+
+        <!-- Display Header -->
+        <div class="content">
+            <header class="container">
+                <!-- Replace the src with the path to your image -->
+                <img src="./bannerLogo.png" alt="Centered Logo">
+            </header>
+        </div>
+        <!-- End of Display Header-->
+
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <div class="icon" onclick="loadTemplate('Home_Template')">
+                <img src="./tinyLogo.png" alt="Home Icon">
+            </div>
+            <div class="nav-item" onclick="loadTemplate('Home_Template')">Home</div>
+            <div class="nav-item" onclick="loadTemplate('Brands_Template')">Brands</div>
+            <div class="nav-item" onclick="loadTemplate('About_Us_Template')">About Us</div>
+        </div>
+        <!-- End of Navigation Bar -->
+
+        <br></br>
+
+        <!-- Dynamic Content Body -->
+        <div id="dynamic-content">
+            <!-- Content will be loaded here dynamically -->
+        </div>
+        <!-- End of Dynamic Content Body -->
+
     </div>
-
-    <script>
-        // Function to load templates dynamically
-        function loadTemplate(templateId) {
-            const templates = {
-                "Home_Template": `
-                    <h1>Home</h1>
-                    <p>Welcome to our home page!</p>
-                `,
-                "About_Us_Template": `
-                    <h1>About Us</h1>
-                    <p>Learn more about us on this page.</p>
-                `,
-                "Vendors_Template": `
-                    <h1>Vendors</h1>
-                    <p>Discover our vendors here.</p>
-                `
-            };
-
-            // Load the selected template into the main content area
-            document.getElementById('main-content').innerHTML = templates[templateId];
-        }
-
-        // Load the Home template by default
-        loadTemplate('Home_Template');
-    </script>
+    <!-- End of Main Content Area -->
 
 </body>
+
+<!-- Scripts -->
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+<script>
+    // Function to load templates dynamically
+    function loadTemplate(templateId) {
+        const templates = {
+            "Home_Template": `
+                <div class="template-item">    
+                    <h1>Home</h1>
+                    <p>Welcome to our home page!</p>
+                    <br></br>
+                    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                </div>
+            `,
+            "About_Us_Template": `
+                <div class="template-item">
+                    <h1>About Us</h1>
+                    <p>Learn more about us on this page.</p>
+                    <br></br>
+                    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                </div>
+            `,
+            "Brands_Template": `
+                <div class="template-item">
+                    <h1>Our Brands</h1>
+                    <p> We are proud to offer a luxe selection of appliances & furniture from our select vendors:</p>
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    <br></br>
+                    <h1>Catalogues</h1>
+                    <h2>Furniture</h2>
+                    <p>Below you will find our vendors' furniture catalogues.</p>
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    <br></br>
+                    <h2>Appliance</h2>
+                    <p>Below you will find our vendors' appliance catalogues.</p>
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    <br></br>
+                    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                </div>
+            `
+        };
+
+        // Load the selected template into the main content area
+        document.getElementById('dynamic-content').innerHTML = templates[templateId];
+    }
+
+    // Load the Home template by default
+    loadTemplate('Home_Template');
+</script>
+<!-- End of Scripts -->
+
 </html>
