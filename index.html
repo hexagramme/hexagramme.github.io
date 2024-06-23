@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardy's Appliance & Furniture</title>
+        <!-- Link to Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Lora&display=swap" rel="stylesheet">
     <style>
         /* Basic Reset */
         * {
@@ -11,9 +13,218 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
         .body {
             background-color: #fefcf0;
+        }
+        /* Font Styles */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+        }
+        body, p, a, span, div, li, input, button {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+        }
+        /* Centering container and adding padding */
+        .iframe-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            padding: 10px 0; /* 5px padding top and bottom, no padding left and right */
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+        }
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 2vw; /* Padding between images, based on viewport width */
+            padding: 2vw; /* Padding around the grid */
+            margin: auto;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Adjust grid layout for different rows */
+        .grid-container .grid-item:nth-child(n+16) {
+            grid-column: span 1;
+            justify-self: center;
+        }
+
+        /* Grid Items */
+        .grid-item {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%; /* Makes the grid items square */
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .grid-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+                /* Centering last row */
+        .grid-container .grid-item:nth-child(n+21) {
+            grid-column: span 1;
+        }
+        
+        /* Making the final row span the correct columns to be centered */
+        .grid-container .grid-item:nth-child(21) {
+            grid-column: 2 / span 1; /* Start on the 2nd column and span 1 column */
+        }
+        .grid-container .grid-item:nth-child(22) {
+            grid-column: 3 / span 1; /* Start on the 3rd column and span 1 column */
+        }
+        .grid-container .grid-item:nth-child(23) {
+            grid-column: 4 / span 1; /* Start on the 4th column and span 1 column */
+        }
+        .grid-container .grid-item:nth-child(24) {
+            grid-column: 5 / span 1; /* Start on the 5th column and span 1 column */
+        }
+
+        /* Adjust grid layout for different screen sizes */
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .grid-container .grid-item:nth-child(n+16) {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .grid-container .grid-item:nth-child(n+16) {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-container .grid-item:nth-child(n+16) {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .grid-container .grid-item:nth-child(n+16) {
+                grid-column: span 1;
+            }
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            max-width: 100%;
+            height: 34vh; /* Reduced height to fit the content */
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Slide Images Wrapper */
+        .slides-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: calc(25% * 8); /* Adjust based on the number of slides */
+        }
+
+        /* Individual Slide */
+        .slide {
+            flex: 0 0 25%; /* Each slide takes 25% of the wrapper width to show 4 at a time */
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: middle; /* Ensures the image is vertically centered */
+        }
+
+        /* Navigation Arrows */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            display: none;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Show the arrows when the user hovers over the slideshow */
+        .slideshow-container:hover .prev, .slideshow-container:hover .next {
+            display: block;
+        }
+
+        /* Caption Text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .prev, .next {
+                font-size: 11px;
+            }
+            .slide {
+                min-width: 50%; /* Show 2 slides at a time on smaller screens */
+            }
+            .slides-wrapper {
+                width: calc(50% * 8); /* Adjust the wrapper width for smaller screens */
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .slide {
+                min-width: 100%; /* Show 1 slide at a time on very small screens */
+            }
+            .slides-wrapper {
+                width: calc(100% * 8); /* Adjust the wrapper width for very small screens */
+            }
         }
 
         .header {
@@ -44,6 +255,8 @@
 
         .header-item {
             align-items: center;
+            max-width: 100%;
+            max-height: 100%;
         }
 
         /* Navigation Bar Styling */
@@ -86,6 +299,7 @@
                 width: 100%;
                 text-align: left;
                 font-size: medium;
+                margin-bottom: 5px; /* Adjust the margin as needed */
             }
         }
 
@@ -136,70 +350,181 @@
             <div class="nav-item" onclick="loadTemplate('About_Us_Template')">About Us</div>
         </div>
         <!-- End of Navigation Bar -->
-
-        <br></br>
-
+        
         <!-- Dynamic Content Body -->
         <div id="dynamic-content">
             <!-- Content will be loaded here dynamically -->
         </div>
         <!-- End of Dynamic Content Body -->
-
+        <div>
+            <footer>
+                <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+            </footer>
+        </div>
     </div>
     <!-- End of Main Content Area -->
 
 </body>
 
 <!-- Scripts -->
+ <!-- IG REEL -->
 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+<!-- DYNAMIC CONTENT -->
 <script>
     // Function to load templates dynamically
     function loadTemplate(templateId) {
         const templates = {
             "Home_Template": `
-                <div class="template-item">    
+                <div class="template-item">
+                    <!-- Slideshow Container -->
+                    <div class="slideshow-container">
+                        <!-- Slides Wrapper -->
+                        <div class="slides-wrapper">
+                            <!-- Each Slide -->
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+1" alt="Slide 1">
+                                <div class="text">Caption for Slide 1</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+2" alt="Slide 2">
+                                <div class="text">Caption for Slide 2</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+3" alt="Slide 3">
+                                <div class="text">Caption for Slide 3</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+4" alt="Slide 4">
+                                <div class="text">Caption for Slide 4</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+5" alt="Slide 5">
+                                <div class="text">Caption for Slide 5</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+6" alt="Slide 6">
+                                <div class="text">Caption for Slide 6</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+7" alt="Slide 7">
+                                <div class="text">Caption for Slide 7</div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/1200x800?text=Slide+8" alt="Slide 8">
+                                <div class="text">Caption for Slide 8</div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div> 
                     <h1>Home</h1>
-                    <p>Welcome to our home page!</p>
+                    <p>Welcome to Hardy's Appliance and Furniture! We are a high-end furniture and appliance boutique offering a one-stop shopping experience that elevates your home with gorgeous furniture and state-of-the-art appliances.</p>
                     <br></br>
-                    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
                 </div>
             `,
             "About_Us_Template": `
                 <div class="template-item">
-                    <h1>About Us</h1>
-                    <p>Learn more about us on this page.</p>
                     <br></br>
-                    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                    <h1>About Us</h1>
+                    <p>Description of who we are, who owns us, "mission statement" -> business objective and aesthetic as to be presented to customer, meet our team, etc.</p>
+                    <br></br>
+                    <h2>Location</h2>
+                    <p>Our storefront location can be found at <a href="https://maps.app.goo.gl/kBKCsLwNUxntAQex7" style="color: #03684a; font-weight: 750; text-decoration: underline;">234 N Greene St., Snow Hill, NC 28580</a>. We operate out of a historic building and are proud to boast original brick walls throughout our showroom.</p>
+                    <!-- Iframe Container -->
+                    <div class="iframe-container">
+                        <!-- Google Maps Iframe -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207998.27164155414!2d-77.934620775!3d35.45546300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89aeb0a7554d9835%3A0x89681f105afa18d0!2sHardy&#39;s%20Appliance%20%26%20Furniture!5e0!3m2!1sen!2sus!4v1719108251335!5m2!1sen!2sus"
+                            width="600"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <br></br>
+                    <h2>Store Hours</h2>
+                    <p>Our operational hours are:</p>
+                    <br></br>
                 </div>
             `,
             "Brands_Template": `
                 <div class="template-item">
+                    <br></br>
                     <h1>Our Brands</h1>
-                    <p> We are proud to offer a luxe selection of appliances & furniture from our select vendors:</p>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
                     <br></br>
-                    <h1>Catalogues</h1>
+                    <h2>Appliances</h2>
+                    <p>We have curated the latest and greatest from our partner, GE Appliance, to provide numerous product offerings from their catalogue. To see what options are available, you can access their catalogue <a href="https://www.geappliances.com/" style="color: #03684a; font-weight: 750; text-decoration: underline;">here</a>.</p>
+                    <br></br>
                     <h2>Furniture</h2>
-                    <p>Below you will find our vendors' furniture catalogues.</p>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <br></br>
-                    <h2>Appliance</h2>
-                    <p>Below you will find our vendors' appliance catalogues.</p>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <br></br>
-                    <iframe src="https://cdn.lightwidget.com/widgets/47e536c01f3c56d5977c101b0e5f882a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                    <p>We are proud to offer a diverse selection of products from the quality vendors below, ranging from dining, bedroom, and outdoor furniture to high-end accent pieces, custom leather apholstery, and hand-made American wood furniture. </p>
+                    <!-- Image Grid Container -->
+                    <div class="grid-container">
+                        <!-- Grid Items -->
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+1" alt="Image 1">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+2" alt="Image 2">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+3" alt="Image 3">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+4" alt="Image 4">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+5" alt="Image 5">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+6" alt="Image 6">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+7" alt="Image 7">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+8" alt="Image 8">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+9" alt="Image 9">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+10" alt="Image 10">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+11" alt="Image 11">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+12" alt="Image 12">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+13" alt="Image 13">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+14" alt="Image 14">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+15" alt="Image 15">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+16" alt="Image 16">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+17" alt="Image 17">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+18" alt="Image 18">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+19" alt="Image 19">
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://via.placeholder.com/400x400?text=Image+20" alt="Image 20">
+                        </div>
+                    </div>
                 </div>
             `
         };
@@ -210,6 +535,49 @@
 
     // Load the Home template by default
     loadTemplate('Home_Template');
+</script>
+<!-- VENDOR REEL -->
+<script>
+    let slideIndex = 0;
+    let slideWidth = document.querySelector('.slide').clientWidth;
+
+    function showSlides(n) {
+        let slides = document.querySelectorAll('.slide');
+        let wrapper = document.querySelector('.slides-wrapper');
+        let totalSlides = slides.length;
+        
+        // Loop the slides
+        slideIndex = (n + totalSlides) % totalSlides;
+
+        // Adjust the transform property to show the current set of 4 slides
+        let offset = -slideIndex * slideWidth;
+
+        // Ensure proper wrapping for continuous loop
+        if (slideIndex + 4 > totalSlides) {
+            offset = -((totalSlides - 4) * slideWidth);
+            setTimeout(() => {
+                wrapper.style.transition = 'none';
+                wrapper.style.transform = `translateX(0)`;
+                slideIndex = 0;
+            }, 500);
+        } else {
+            wrapper.style.transition = 'transform 0.5s ease-in-out';
+            wrapper.style.transform = `translateX(${offset}px)`;
+        }
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex + n);
+    }
+
+    // Automatically advance slides every 5 seconds
+    setInterval(() => plusSlides(1), 5000);
+
+    // Update slideWidth on window resize
+    window.addEventListener('resize', () => {
+        slideWidth = document.querySelector('.slide').clientWidth;
+        showSlides(slideIndex); // Adjust position on resize
+    });
 </script>
 <!-- End of Scripts -->
 
