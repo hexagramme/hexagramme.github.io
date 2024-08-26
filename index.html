@@ -34,97 +34,65 @@
             padding: 10px 0; /* 5px padding top and bottom, no padding left and right */
             box-sizing: border-box; /* Include padding in the element's total width and height */
         }
+
         /* Grid Container */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: 1vw; /* Padding between images, based on viewport width */
-            padding: 1vw; /* Padding around the grid */
-            margin: auto;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1vw; /* Padding between images, based on viewport width */
+    padding: 1vw; /* Padding around the grid */
+    margin: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
-        /* Adjust grid layout for different rows */
-        .grid-container .grid-item:nth-child(n+16) {
-            grid-column: span 1;
-            justify-self: center;
-        }
+/* Grid Items */
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1; /* 1:1 aspect ratio (square) by default */
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        /* Grid Items */
-        .grid-item {
-            position: relative;
-            overflow: hidden;
-            box-sizing: border-box;
-            /* Maintain aspect ratio */
-            aspect-ratio: 1 / 1; /* 1:1 aspect ratio (square) by default */
-        }
+/* Images inside grid items */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio without clipping */
+    display: block;
+}
 
-        /* Images inside grid items */
-        .grid-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Maintain aspect ratio without clipping */
-        }
+/* Adjust grid layout for different screen sizes */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
-        /* Centering last row */
-        .grid-container .grid-item:nth-child(n+21) {
-            grid-column: span 1;
-        }
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
-        /* Making the final row span the correct columns to be centered */
-        .grid-container .grid-item:nth-child(21) {
-            grid-column: 2 / span 1; /* Start on the 2nd column and span 1 column */
-        }
-        .grid-container .grid-item:nth-child(22) {
-            grid-column: 3 / span 1; /* Start on the 3rd column and span 1 column */
-        }
-        .grid-container .grid-item:nth-child(23) {
-            grid-column: 4 / span 1; /* Start on the 4th column and span 1 column */
-        }
-        .grid-container .grid-item:nth-child(24) {
-            grid-column: 5 / span 1; /* Start on the 5th column and span 1 column */
-        }
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-        /* Adjust grid layout for different screen sizes */
-        @media (max-width: 1200px) {
-            .grid-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .grid-container .grid-item:nth-child(n+16) {
-                grid-column: span 1;
-            }
-        }
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
-        @media (max-width: 992px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .grid-container .grid-item:nth-child(n+16) {
-                grid-column: span 1;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-container .grid-item:nth-child(n+16) {
-                grid-column: span 1;
-            }
-        }
 
-        @media (max-width: 576px) {
-            .grid-container {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            .grid-container .grid-item:nth-child(n+16) {
-                grid-column: span 1;
-            }
-        }
         .image-container {
             display: flex;
             justify-content: center;
@@ -448,6 +416,50 @@
                                 <img src="banner_png/CLVG41.png" alt="Living furniture by Coastal Living">
                                 <div class="text">Coastal Living</div>
                             </div>
+                            <div class="slide">
+                                <img src="banner_png/M23.png" alt="Weekender">
+                                <div class="text">Weekender</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/P14.png" alt="New Modern">
+                                <div class="text">New Modern</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/EV7.png" alt="Erin V">
+                                <div class="text">Erin V</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/MT12.png" alt="Midtown">
+                                <div class="text">Midtown</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/CLVG15.png" alt="Playlist">
+                                <div class="text">Playlist</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/MF33.png" alt="Modern Farmhouse">
+                                <div class="text">Modern Farmhouse</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/LRNC15.png" alt="LRNC">
+                                <div class="text">LRNC</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/EV10.png" alt="Coastal Living">
+                                <div class="text">Coastal Living</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/CLO47.png" alt="Living furniture by Coastal Living">
+                                <div class="text">Coastal Living</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/NM14.png" alt="Living furniture by Coastal Living">
+                                <div class="text">Coastal Living</div>
+                            </div>
+                            <div class="slide">
+                                <img src="banner_png/NM42.png" alt="Living furniture by Coastal Living">
+                                <div class="text">Coastal Living</div>
+                            </div>
                         </div>
 
                         <!-- Navigation Arrows -->
@@ -561,6 +573,17 @@
                         <div class="grid-item">
                             <img src="brands/vb.png" alt="Image 19">
                         </div>
+                        <div class="grid-item">
+                            <img src="brands/spectrahome.png" alt="Image 20">
+                        </div>
+                        <div class="grid-item">
+                            <img src="brands/rowe.png" alt="Image 21">
+                        </div>
+                        <div class="grid-item">
+                            <img src="brands/sunsettrading.png" alt="Image 22">
+                        </div>
+                        <div class="grid-item">
+                            <img src="brands/elk.png" alt="Image 23">
                     </div>
                 </div>
             `
