@@ -35,6 +35,18 @@
             box-sizing: border-box; /* Include padding in the element's total width and height */
         }
 
+.ge {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+}
+.ge img {
+    height: 25vh;
+    width: auto;
+}
+
         /* Grid Container */
 .grid-container {
     display: grid;
@@ -90,9 +102,6 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-
-
         .image-container {
             display: flex;
             justify-content: center;
@@ -148,7 +157,8 @@
         .slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            
+            object-fit: scale-down;
             vertical-align: middle; /* Ensures the image is vertically centered */
         }
 
@@ -311,6 +321,8 @@
         .template-item p {
             padding-left: 15px;
             padding-bottom: 5px;
+            font-size: 20px;
+            text-align: center;
         }
         .template-item ul {
             padding-left: 30px;
@@ -346,7 +358,7 @@
             </div>
             <div class="nav-item" onclick="loadTemplate('Home_Template')">Home</div>
             <div class="nav-item" onclick="loadTemplate('Brands_Template')">Brands</div>
-            <div class="nav-item" onclick="loadTemplate('About_Us_Template')">About</div>
+            <div class="nav-item" onclick="loadTemplate('Details_Template')">Details</div>
         </div>
         <!-- End of Navigation Bar -->
         
@@ -467,18 +479,69 @@
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                     <br></br>
-                    <h1>Home</h1>
                     <p>Welcome to Hardy's Appliance and Furniture! We are a high-end furniture and appliance boutique offering a one-stop shopping experience that elevates your home with gorgeous furniture and state-of-the-art appliances.</p>
                     <br></br>
                 </div>
             `,
-            "About_Us_Template": `
+            "Details_Template": `
                 <div class="template-item">
                     <br></br>
-                    <h1>About Us</h1>
-                    <p>Welcome to Hardys Appliance and Furniture, where we blend timeless elegance with contemporary style. Nestled in a beautiful historic building whose original exposed brick decorates our showrooms, we have been part of the community since 1975 as a local venue for you to discover reliable, state-of-the-art appliances and unique, high-quality furniture. Our recent rebrand reflects our continued dedication to quality, craftsmanship and our commitment to offering you an elevated line of products. We specialize in made-to-order custom furniture, working closely with you to create pieces that perfectly fit your style and needs. Whether you're looking for a classic design or something modern, our carefully curated selection has something to suit your taste and keep you comfortable at the same time. At Hardys, we believe that your home should reflect your individuality. Visit us to explore our hand-picked collection and discuss your custom furniture needs. We're here to help you bring your vision to life with furniture that combines elegance, comfort, and exceptional craftsmanship.</p>
+                    <p>At Hardys Appliance and Furniture, we blend timeless elegance with contemporary style. Nestled in a beautiful historic building in downtown Snow Hill, exposed brick and original hardwoods decorate our showrooms. We have been part of the community since 1975 as a venue for you to discover reliable, state-of-the-art appliances and unique, high-quality furniture. </p>
                     <br></br>
-                    <h2>Location</h2>
+
+                     <!-- Slideshow Container -->
+                    <div class="slideshow-container">
+                        <!-- Slides Wrapper -->
+                        <div class="slides-wrapper">
+                            <!-- Each Slide -->
+                            <div class="slide">
+                                <img src="about_img/hardys_front.JPEG" alt="Slide 4">
+                                <div class="tiny-text">Caption for Slide 4</div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="slide">
+                                <img src="about_img/hardys_bas_2.JPEG" alt="Slide 3">
+                                <div class="tiny-text">Caption for Slide 3</div>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="slide">
+                                <img src="about_img/hardys_disp_2.JPEG" alt="Slide 4">
+                                <div class="tiny-text">Caption for Slide 4</div>
+                            </div>
+                            <div class="slide">
+                                <img src="about_img/upper_disp.JPEG" alt="Slide 4">
+                                <div class="tiny-text">Caption for Slide 4</div>
+                            </div>
+                            <div class="slide">
+                                <img src="about_img/hardys_bas.JPEG" alt="Slide 4">
+                                <div class="tiny-text">Caption for Slide 4</div>
+                            </div>
+                            <div class="slide">
+                                <img src="about_img/hardys_disp.JPEG" alt="Slide 4">
+                                <div class="tiny-text">Caption for Slide 4</div>
+                            </div>
+                            <div class="slide">
+                                <img src="about_img/vert_disp.JPEG" alt="Slide 4">
+                                <div class="tiny-text">Caption for Slide 4</div>
+                            </div>
+                            <div class="slide">
+                                <img src="about_img/1_crop.png" alt="Slide 1">
+                                <div class="tiny-text">Caption for Slide 1</div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="slide">
+                                <img src="about_img/2_crop.png" alt="Slide 2">
+                                <div class="tiny-text">Caption for Slide 2</div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br></br>
+                    <p>Our recent rebrand reflects our continued dedication to quality, craftsmanship and our commitment to offering you an elevated line of products. We specialize in made-to-order custom furniture, working closely with you to create pieces that perfectly fit your style and needs. Whether you're looking for a classic design or something modern, our carefully curated selection has something to suit your taste and keep you comfortable at the same time.</p>
+                    <br></br>
                     <p>Our storefront location can be found at <a href="https://maps.app.goo.gl/kBKCsLwNUxntAQex7" style="color: #03684a; font-weight: 750; text-decoration: underline;">234 N Greene St., Snow Hill, NC 28580</a>. We operate out of a historic building and are proud to boast original brick walls throughout our showroom.</p>
                     <!-- Iframe Container -->
                     <div class="iframe-container">
@@ -494,24 +557,19 @@
                         </iframe>
                     </div>
                     <br></br>
-                    <h2>Store Hours</h2>
-                    <p>Our operational hours are Monday through Saturday, from 8:00 AM to 4:30 PM.</p>
+                    <p>Our hours are M-F 8:30AM - 5:30PM, and Saturday 9:00AM - 4:00PM.</p>
                     <br></br>
-                    <div class="image-container">
-                        <img src="about_img/1.png" alt="Historic images of the Hardy's building.">
-                        <img src="about_img/2.png" alt="Historic images of the Hardy's building.">
-                    </div>
                 </div>
             `,
             "Brands_Template": `
                 <div class="template-item">
                     <br></br>
-                    <h1>Our Brands</h1>
+                    <div class="ge">
+                        <img class="ge" src="brands/ge.png" alt="GE Logo">
+                    </div>
                     <br></br>
-                    <h2>Appliances</h2>
                     <p>We have curated the latest and greatest from our partner, GE Appliance, to provide numerous product offerings from their catalog. To see what options are available, you can access their catalog <a href="https://www.geappliances.com/" style="color: #03684a; font-weight: 750; text-decoration: underline;">here</a>.</p>
                     <br></br>
-                    <h2>Furniture</h2>
                     <p>We are proud to offer a diverse selection of products from the quality vendors below, ranging from dining, bedroom, and outdoor furniture to high-end accent pieces, custom leather apholstery, and hand-made American wood furniture. </p>
                     <!-- Image Grid Container -->
                     <div class="grid-container">
@@ -639,6 +697,7 @@
         showSlides(slideIndex); // Adjust position on resize
     });
 </script>
+
 <!-- End of Scripts -->
 
 </html>
