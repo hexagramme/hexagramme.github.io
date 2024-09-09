@@ -157,8 +157,8 @@
         .slide img {
             width: 100%;
             height: 100%;
-            
             object-fit: contain;
+            resize: none;
             vertical-align: middle; /* Ensures the image is vertically centered */
         }
 
@@ -268,6 +268,9 @@
             max-height: 100%;
         }
 
+        .text-bucket {
+            text-align: center;
+        }
         /* Navigation Bar Styling */
         .navbar {
             display: flex;
@@ -485,53 +488,36 @@
             `,
             "Details_Template": `
                 <div class="template-item">
-                    <br></br>
-                    <p>At Hardys Appliance and Furniture, we blend timeless elegance with contemporary style. Nestled in a beautiful historic building in downtown Snow Hill, exposed brick and original hardwoods decorate our showrooms. We have been part of the community since 1975 as a venue for you to discover reliable, state-of-the-art appliances and unique, high-quality furniture. </p>
-                    <br></br>
-
-                     <!-- Slideshow Container -->
+                    <!-- Slideshow Container -->
                     <div class="slideshow-container">
                         <!-- Slides Wrapper -->
                         <div class="slides-wrapper">
                             <!-- Each Slide -->
                             <div class="slide">
-                                <img src="about_img/hardys_front.JPEG" alt="Slide 4">
-                                <div class="tiny-text">Caption for Slide 4</div>
+                                <img src="about_img/new_resized_5.JPEG" alt="Hardy's Storefront">
                             </div>
                             <!-- Slide 3 -->
                             <div class="slide">
-                                <img src="about_img/hardys_bas_2.JPEG" alt="Slide 3">
-                                <div class="tiny-text">Caption for Slide 3</div>
+                                <img src="about_img/new_resized_2.JPEG" alt="Furniture Showroom">
                             </div>
                             <!-- Slide 4 -->
                             <div class="slide">
-                                <img src="about_img/hardys_disp_2.JPEG" alt="Slide 4">
-                                <div class="tiny-text">Caption for Slide 4</div>
+                                <img src="about_img/new_resized_4.JPEG" alt="Living Room Set">
                             </div>
                             <div class="slide">
-                                <img src="about_img/upper_disp.JPEG" alt="Slide 4">
-                                <div class="tiny-text">Caption for Slide 4</div>
+                                <img src="about_img/new_resized_3.JPEG" alt="Sitting Area">
                             </div>
                             <div class="slide">
-                                <img src="about_img/hardys_bas.JPEG" alt="Slide 4">
-                                <div class="tiny-text">Caption for Slide 4</div>
+                                <img src="about_img/new_resized_1.JPEG" alt="Furniture Showroom">
                             </div>
                             <div class="slide">
-                                <img src="about_img/hardys_disp_resize.JPEG" alt="Slide 4">
-                                <div class="tiny-text">Caption for Slide 4</div>
+                                <img src="about_img/new_resized_8.JPEG" alt="Furniture Showroom">
                             </div>
                             <div class="slide">
-                                <img src="about_img/vert_disp.JPEG" alt="Slide 4">
-                                <div class="tiny-text">Caption for Slide 4</div>
+                                <img src="about_img/new_resized_6.JPEG" alt="Our Storefront in 1900">
                             </div>
                             <div class="slide">
-                                <img src="about_img/1_crop_resize.JPEG" alt="Slide 1">
-                                <div class="tiny-text">Caption for Slide 1</div>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="slide">
-                                <img src="about_img/2_crop_resize.JPEG" alt="Slide 2">
-                                <div class="tiny-text">Caption for Slide 2</div>
+                                <img src="about_img/new_resized_7.JPEG" alt="Our Storefront in 1970">
                             </div>
                         </div>
 
@@ -539,26 +525,28 @@
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
-                    <br></br>
-                    <p>Our recent rebrand reflects our continued dedication to quality, craftsmanship and our commitment to offering you an elevated line of products. We specialize in made-to-order custom furniture, working closely with you to create pieces that perfectly fit your style and needs. Whether you're looking for a classic design or something modern, our carefully curated selection has something to suit your taste and keep you comfortable at the same time.</p>
-                    <br></br>
-                    <p>Our storefront location can be found at <a href="https://maps.app.goo.gl/kBKCsLwNUxntAQex7" style="color: #03684a; font-weight: 750; text-decoration: underline;">234 N Greene St., Snow Hill, NC 28580</a>. We operate out of a historic building and are proud to boast original brick walls throughout our showroom.</p>
-                    <!-- Iframe Container -->
-                    <div class="iframe-container">
-                        <!-- Google Maps Iframe -->
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207998.27164155414!2d-77.934620775!3d35.45546300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89aeb0a7554d9835%3A0x89681f105afa18d0!2sHardy&#39;s%20Appliance%20%26%20Furniture!5e0!3m2!1sen!2sus!4v1719108251335!5m2!1sen!2sus"
-                            width="600"
-                            height="450"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                    <br></br>
-                    <p>Our hours are M-F 8:30AM - 5:30PM, and Saturday 9:00AM - 4:00PM.</p>
-                    <br></br>
+                        <br></br>
+                        <p>At Hardys Appliance and Furniture, we blend timeless elegance with contemporary style. Nestled in a beautiful historic building in downtown Snow Hill, exposed brick and original hardwoods decorate our showrooms. We have been part of the community since 1975 as a venue for you to discover reliable, state-of-the-art appliances and unique, high-quality furniture. </p>
+                        <br></br>
+                        <p>Our recent rebrand reflects our continued dedication to quality, craftsmanship and our commitment to offering you an elevated line of products. We specialize in made-to-order custom furniture, working closely with you to create pieces that perfectly fit your style and needs. Whether you're looking for a classic design or something modern, our carefully curated selection has something to suit your taste and keep you comfortable at the same time.</p>
+                        <br></br>
+                        <p><a href="https://maps.app.goo.gl/kBKCsLwNUxntAQex7" style="color: #03684a; font-weight: 750; text-decoration: underline;">234 N Greene St., Snow Hill, NC 28580</a></p>
+                        <p>M-F 8:30AM - 5:30PM</p>
+                        <p>Saturday 9:00AM - 4:00PM</p>
+                        <!-- Iframe Container -->
+                        <div class="iframe-container">
+                            <!-- Google Maps Iframe -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207998.27164155414!2d-77.934620775!3d35.45546300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89aeb0a7554d9835%3A0x89681f105afa18d0!2sHardy&#39;s%20Appliance%20%26%20Furniture!5e0!3m2!1sen!2sus!4v1719108251335!5m2!1sen!2sus"
+                                width="600"
+                                height="450"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <br></br>
                 </div>
             `,
             "Brands_Template": `
@@ -679,7 +667,7 @@
                 slideIndex = 0;
             }, 500);
         } else {
-            wrapper.style.transition = `transform 0.5s ease-in-out`;
+            wrapper.style.transition = 'transform 0.5s ease-in-out';
             wrapper.style.transform = `translateX(${offset}px)`;
         }
     }
